@@ -43,7 +43,7 @@
   nav ul a:hover { color: var(--accent); }
 
   /* Hero */
-  header.hero { padding: 70px 0 60px; }
+  header.hero { padding: 70px 0 28px; }
   .hero .wrap { display: flex; align-items: flex-start; gap: 56px; }
   .photo-wrap { position: relative; width: 33%; max-width: 360px; aspect-ratio: 1; flex-shrink: 0; }
   .hero .photo {
@@ -93,10 +93,13 @@
   .xp .dates { margin-left: auto; color: var(--muted); font-size: 15px; }
 
   /* About */
-  #about {
-    border-top: none; padding: 72px 0 80px;
+  #about { border-top: none; padding: 40px 0 80px; position: relative; }
+  #about::before {
+    content: ""; position: absolute; left: 0; right: 0; top: -150px; bottom: 0;
     background: url("assets/mosaic-spot.svg") center / auto no-repeat;
+    pointer-events: none;
   }
+  #about .wrap { position: relative; }
   #about .section-title { font-size: 44px; margin-bottom: 56px; }
   .about p { margin-bottom: 18px; max-width: 700px; }
   #contact { border-top: none; }
