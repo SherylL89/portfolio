@@ -93,6 +93,30 @@
   }
   .work-item .btn-outline:hover { background: #f4f3ef; color: #3a3a40; border-color: #f4f3ef; }
 
+  /* Side projects — Anthony-style */
+  #projects .section-title { font-size: 44px; margin-bottom: 56px; }
+  .sp-featured { display: flex; align-items: center; gap: 56px; margin-bottom: 72px; }
+  .sp-featured .info { flex: 0 0 32%; }
+  .sp-featured h3 { font-size: 26px; font-weight: 500; margin-bottom: 14px; }
+  .sp-featured p { color: var(--muted); font-size: 16px; margin-bottom: 24px; }
+  .sp-featured .shot, .sp-item .shot {
+    background: linear-gradient(135deg, #eef0f4, #e4e2dc); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .sp-featured .shot { flex: 1; aspect-ratio: 16/10; }
+  .sp-featured .shot img, .sp-item .shot img { width: 100%; height: 100%; object-fit: cover; }
+  .sp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 36px; }
+  .sp-item h3 { font-size: 22px; font-weight: 500; margin-bottom: 18px; }
+  .sp-item .shot { aspect-ratio: 4/3; margin-bottom: 18px; }
+  .sp-item p { color: var(--muted); font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+  .btn-dark {
+    display: inline-block; padding: 11px 28px; border: 1.5px solid var(--ink); border-radius: 4px;
+    color: var(--ink); font-size: 15px; letter-spacing: .03em; transition: background .2s, color .2s;
+  }
+  .btn-dark:hover { background: var(--ink); color: #fff; }
+  .shot-ph { color: var(--muted); font-size: 14px; }
+  @media (max-width: 700px) { .sp-featured { flex-direction: column; } .sp-featured .info { flex: none; } }
+
   /* Cards */
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
   .card { border: 1px solid var(--line); border-radius: 12px; background: #fff; overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, box-shadow .15s; }
@@ -196,22 +220,32 @@
 <section id="projects">
   <div class="wrap">
     <h2 class="section-title">Side Projects</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="thumb">🛠️</div>
-        <div class="body">
-          <h3>Project One</h3>
-          <p>What it is, who it's for, and any traction (users, downloads, revenue).</p>
-          <a class="cta" href="#">View Project →</a>
-        </div>
+    <div class="sp-featured">
+      <div class="info">
+        <h3>[Featured Project]</h3>
+        <p>[One–two sentences: what it is, who it's for, and any traction.]</p>
+        <a class="btn-dark" href="#">View Project</a>
       </div>
-      <div class="card">
-        <div class="thumb">💡</div>
-        <div class="body">
-          <h3>Project Two</h3>
-          <p>What it is, who it's for, and any traction.</p>
-          <a class="cta" href="#">View Project →</a>
-        </div>
+      <div class="shot"><span class="shot-ph">[Screenshot — e.g., browser mockup of the live product]</span></div>
+    </div>
+    <div class="sp-grid">
+      <div class="sp-item">
+        <h3>[Project Two]</h3>
+        <div class="shot"><span class="shot-ph">[Screenshot]</span></div>
+        <p>[One–two sentences about this project.]</p>
+        <a class="btn-dark" href="#">View Project</a>
+      </div>
+      <div class="sp-item">
+        <h3>[Project Three]</h3>
+        <div class="shot"><span class="shot-ph">[Screenshot]</span></div>
+        <p>[One–two sentences about this project.]</p>
+        <a class="btn-dark" href="#">View Project</a>
+      </div>
+      <div class="sp-item">
+        <h3>[Project Four]</h3>
+        <div class="shot"><span class="shot-ph">[Screenshot]</span></div>
+        <p>[One–two sentences about this project.]</p>
+        <a class="btn-dark" href="#">View Project</a>
       </div>
     </div>
   </div>
