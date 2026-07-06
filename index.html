@@ -38,13 +38,13 @@
   nav { position: sticky; top: 0; background: rgba(253,253,251,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10; }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
   nav .logo { font-weight: 700; border: none; font-size: 21px; }
-  nav ul { display: flex; gap: 28px; list-style: none; }
-  nav ul a { border: none; font-size: 15px; color: var(--muted); }
+  nav ul { display: flex; gap: 24px; list-style: none; }
+  nav ul a { border: none; font-size: 13px; color: var(--muted); white-space: nowrap; }
   nav ul a:hover { color: var(--accent); }
 
   /* Hero */
   header.hero { padding: 70px 0 28px; }
-  .hero .wrap { display: flex; align-items: flex-start; gap: 56px; }
+  .hero .wrap { display: flex; align-items: center; gap: 56px; }
   .photo-wrap { position: relative; width: 33%; max-width: 360px; aspect-ratio: 1; flex-shrink: 0; }
   .hero .photo {
     width: 100%; height: 100%; border-radius: 20px;
@@ -228,8 +228,11 @@
   footer .li-icon:hover { color: #fff; }
 
   @media (max-width: 640px) {
-    nav ul { gap: 16px; }
-    nav ul li:nth-child(n+4) { display: none; }
+    nav .wrap { gap: 12px; }
+    nav .logo { font-size: 17px; white-space: nowrap; }
+    nav ul { gap: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    nav ul::-webkit-scrollbar { display: none; }
+    nav ul a { font-size: 12px; }
   }
 </style>
 </head>
