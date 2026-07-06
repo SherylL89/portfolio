@@ -93,14 +93,10 @@
   .xp .dates { margin-left: auto; color: var(--muted); font-size: 15px; }
 
   /* About */
-  #about { border-top: none; padding: 72px 0 80px; position: relative; }
-  #about::before {
-    content: ""; position: absolute; left: 0; right: 0; top: -100px; bottom: -100px;
-    background-image: url("assets/mosaic.svg"); pointer-events: none;
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 200px, #000 calc(100% - 200px), transparent);
-    mask-image: linear-gradient(to bottom, transparent, #000 200px, #000 calc(100% - 200px), transparent);
+  #about {
+    border-top: none; padding: 72px 0 80px;
+    background: url("assets/mosaic-spot.svg") center / auto no-repeat;
   }
-  #about .wrap { position: relative; }
   #about .section-title { font-size: 44px; margin-bottom: 56px; }
   .about p { margin-bottom: 18px; max-width: 700px; }
   #contact { border-top: none; }
