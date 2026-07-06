@@ -21,7 +21,6 @@
   a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color .2s, color .2s; }
   a:hover { color: var(--accent); border-color: var(--accent); }
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-  .narrow { max-width: 880px; margin: 0 auto; padding: 0 24px; }
   nav { position: sticky; top: 0; background: rgba(253,253,251,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10; }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
   nav .logo { font-weight: 700; border: none; font-size: 21px; font-family: var(--font-display); }
@@ -30,25 +29,52 @@
   nav ul a:hover { color: var(--accent); }
   @media (max-width: 640px) { nav ul { gap: 16px; } nav ul li:nth-child(n+4) { display: none; } }
 
-  header.page-hero { background: #f6f1ec; padding: 88px 0 64px; }
-  .page-hero .logo-mark { height: 64px; margin-bottom: 28px; display: flex; align-items: center; }
-  .page-hero .logo-mark img { max-height: 64px; max-width: 260px; object-fit: contain; }
-  .page-hero .dates { font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-  .page-hero h1 { font-size: clamp(36px, 5vw, 54px); color: var(--ink); margin-bottom: 20px; }
-  .page-hero .lede { font-size: 19px; color: var(--muted); max-width: 720px; }
+  /* Full-bleed hero */
+  header.page-hero {
+    position: relative; min-height: 62vh; display: flex; align-items: flex-end;
+    background: #26221c; overflow: hidden;
+  }
+  .page-hero .hero-img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55;
+  }
+  .page-hero .scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,10,12,.72) 0%, rgba(10,10,12,.25) 55%, rgba(10,10,12,.15) 100%);
+  }
+  .page-hero .wrap { position: relative; width: 100%; padding-top: 120px; padding-bottom: 64px; }
+  .page-hero .dates { font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.75); margin-bottom: 12px; }
+  .page-hero h1 { font-size: clamp(40px, 6vw, 64px); color: #fff; margin-bottom: 18px; }
+  .page-hero .lede { font-size: 19px; color: rgba(255,255,255,.85); max-width: 640px; }
+  .page-hero .logo-tile {
+    position: absolute; right: 24px; bottom: 64px;
+    width: 150px; height: 150px; background: #f6f1ec; border-radius: 18px;
+    display: flex; align-items: center; justify-content: center; padding: 22px;
+  }
+  .page-hero .logo-tile img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  @media (max-width: 900px) { .page-hero .logo-tile { display: none; } }
 
-  main { padding: 72px 0 40px; }
-  .feature { margin-bottom: 88px; }
+  /* Alternating feature rows */
+  main { padding: 96px 0 40px; }
+  .feature {
+    display: flex; align-items: center; gap: 72px; margin-bottom: 120px;
+  }
+  .feature:nth-child(even) { flex-direction: row-reverse; }
+  .feature .txt { flex: 0 0 32%; }
+  .feature h2 { font-size: clamp(28px, 3vw, 40px); margin-bottom: 18px; line-height: 1.2; }
+  .feature p { color: var(--muted); font-size: 17px; }
   .feature .shot {
-    background: linear-gradient(135deg, #eef0f4, #e4e2dc); border-radius: 12px; overflow: hidden;
-    display: flex; align-items: center; justify-content: center; min-height: 320px; margin-bottom: 36px;
+    flex: 1; background: linear-gradient(135deg, #eef0f4, #e4e2dc); border-radius: 12px;
+    min-height: 340px; display: flex; align-items: center; justify-content: center; overflow: hidden;
   }
   .feature .shot img { width: 100%; display: block; }
   .feature .shot .ph { color: var(--muted); font-size: 14px; padding: 40px; text-align: center; }
-  .feature h2 { font-size: 30px; margin-bottom: 14px; }
-  .feature p { color: var(--muted); font-size: 17px; max-width: 760px; }
+  @media (max-width: 800px) {
+    .feature, .feature:nth-child(even) { flex-direction: column; gap: 28px; }
+    .feature .txt { flex: none; }
+    .feature .shot { width: 100%; }
+  }
 
-  .backlink { display: inline-block; margin: 0 0 56px; font-size: 15px; color: var(--muted); border: none; }
+  .backlink { display: inline-block; margin: 0 0 72px; font-size: 15px; color: var(--muted); border: none; }
   .backlink:hover { color: var(--accent); }
 
   footer { background: #101012; padding: 64px 0 72px; font-size: 15px; margin-top: 48px; }
@@ -80,31 +106,39 @@
 </nav>
 
 <header class="page-hero">
-  <div class="narrow">
-    <div class="logo-mark"><img src="assets/ey-ibm.jpg" alt="EY–IBM Alliance logo"></div>
+  <!-- Optional: <img class="hero-img" src="assets/YOUR-HERO-PHOTO.jpg" alt=""> -->
+  <div class="scrim"></div>
+  <div class="wrap">
     <div class="dates">[Years]</div>
     <h1>EY–IBM Alliance</h1>
     <p class="lede">[One–two sentences: your role in the alliance and the products you led.]</p>
+    <div class="logo-tile"><img src="assets/ey-ibm.jpg" alt="EY–IBM Alliance logo"></div>
   </div>
 </header>
 
 <main>
-  <div class="narrow">
+  <div class="wrap">
     <a class="backlink" href="index.html#work">&larr; Back to all work</a>
     <div class="feature">
+      <div class="txt">
+        <h2>[Feature 1]</h2>
+        <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
+      </div>
       <div class="shot"><span class="ph">[Screenshot or mockup]</span></div>
-      <h2>[Feature 1]</h2>
-      <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
     </div>
     <div class="feature">
+      <div class="txt">
+        <h2>[Feature 2]</h2>
+        <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
+      </div>
       <div class="shot"><span class="ph">[Screenshot or mockup]</span></div>
-      <h2>[Feature 2]</h2>
-      <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
     </div>
     <div class="feature">
+      <div class="txt">
+        <h2>[Feature 3]</h2>
+        <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
+      </div>
       <div class="shot"><span class="ph">[Screenshot or mockup]</span></div>
-      <h2>[Feature 3]</h2>
-      <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
     </div>
 
   </div>
