@@ -93,9 +93,16 @@
   .xp .dates { margin-left: auto; color: var(--muted); font-size: 15px; }
 
   /* About */
-  #about { border-top: none; }
-  #about .section-title { font-size: 44px; margin-bottom: 56px; }
-  .about p { margin-bottom: 18px; max-width: 700px; }
+  #about {
+    border-top: none; padding: 72px 0 80px;
+    background-color: #111312;
+    background-image: url("assets/mosaic.svg");
+  }
+  #about .section-title { font-size: 44px; margin-bottom: 56px; color: #f2f1ec; }
+  .about p { margin-bottom: 18px; max-width: 700px; color: #b9b8b2; }
+  .about p strong { color: #f2f1ec; }
+  .about a { color: #e3e2dd; border-bottom-color: rgba(255,255,255,.3); }
+  .about a:hover { color: #fff; border-bottom-color: #fff; }
   #contact { border-top: none; }
 
   /* Work section — dark gray band */
