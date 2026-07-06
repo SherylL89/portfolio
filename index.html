@@ -143,6 +143,20 @@
   }
   .btn-dark:hover { background: var(--ink); color: #fff; }
   .shot-ph { color: var(--muted); font-size: 14px; }
+  /* Laptop frame */
+  .laptop { flex: 1; }
+  .laptop .screen {
+    background: #1c1c1e; border-radius: 14px 14px 0 0; padding: 14px 14px 16px;
+  }
+  .laptop .screen img { display: block; width: 100%; border-radius: 6px; }
+  .laptop .base {
+    height: 16px; background: linear-gradient(#d8d6d0, #b9b7b1);
+    border-radius: 0 0 12px 12px; position: relative;
+  }
+  .laptop .base::before {
+    content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+    width: 110px; height: 6px; background: #a5a39d; border-radius: 0 0 8px 8px;
+  }
   @media (max-width: 700px) { .sp-featured { flex-direction: column; } .sp-featured .info { flex: none; } }
 
   /* Case studies — patterned band with soft dot overflow */
@@ -297,11 +311,14 @@
     <h2 class="section-title">Side Projects</h2>
     <div class="sp-featured">
       <div class="info">
-        <h3>[Featured Project]</h3>
-        <p>[One–two sentences: what it is, who it's for, and any traction.]</p>
+        <h3>Practicely</h3>
+        <p>Agentic AI resume &amp; interview coach built exclusively for product managers. Attracted 200+ users to join a few weeks after launch.</p>
         <a class="btn-dark" href="#">View Project</a>
       </div>
-      <div class="shot"><span class="shot-ph">[Screenshot — e.g., browser mockup of the live product]</span></div>
+      <div class="laptop">
+        <div class="screen"><img src="assets/practicely.jpg" alt="Practicely — AI resume and interview coach for product managers"></div>
+        <div class="base"></div>
+      </div>
     </div>
     <div class="sp-grid">
       <div class="sp-item">
