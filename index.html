@@ -117,6 +117,24 @@
   .shot-ph { color: var(--muted); font-size: 14px; }
   @media (max-width: 700px) { .sp-featured { flex-direction: column; } .sp-featured .info { flex: none; } }
 
+  /* Case studies — patterned band */
+  #cases {
+    border-top: none; padding: 72px 0 80px;
+    background-color: #fdfdfb;
+    background-image: radial-gradient(circle, #c9c7be 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+  }
+  #cases .section-title { font-size: 44px; margin-bottom: 56px; }
+  .cs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 48px; }
+  .cs-item h3 { font-size: 24px; font-weight: 500; margin-bottom: 20px; }
+  .cs-item .shot {
+    background: #101012; border-radius: 10px; aspect-ratio: 16/10; margin-bottom: 18px;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .cs-item .shot img { width: 100%; height: 100%; object-fit: cover; }
+  .cs-item .shot .shot-ph { color: #8a8984; }
+  .cs-item p { color: var(--muted); font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+
   /* Cards */
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
   .card { border: 1px solid var(--line); border-radius: 12px; background: #fff; overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, box-shadow .15s; }
@@ -254,22 +272,24 @@
 <section id="cases">
   <div class="wrap">
     <h2 class="section-title">Case Studies</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="thumb">📱</div>
-        <div class="body">
-          <h3>[Famous Product] Case Study</h3>
-          <p>One sentence describing the feature concept, e.g. "Adding X to the Y app."</p>
-          <a class="cta" href="#">View Case Study →</a>
-        </div>
+    <div class="cs-grid">
+      <div class="cs-item">
+        <h3>[Famous Product]</h3>
+        <div class="shot"><span class="shot-ph">[App screenshots]</span></div>
+        <p>[One sentence describing the feature concept, e.g. "Adding X to the Y app."]</p>
+        <a class="btn-dark" href="#">View Case Study</a>
       </div>
-      <div class="card">
-        <div class="thumb">🔍</div>
-        <div class="body">
-          <h3>[Famous Product] Case Study</h3>
-          <p>One sentence describing the feature concept.</p>
-          <a class="cta" href="#">Coming Soon</a>
-        </div>
+      <div class="cs-item">
+        <h3>[Famous Product]</h3>
+        <div class="shot"><span class="shot-ph">[App screenshots]</span></div>
+        <p>[One sentence describing the feature concept.]</p>
+        <a class="btn-dark" href="#">View Case Study</a>
+      </div>
+      <div class="cs-item">
+        <h3>[Famous Product]</h3>
+        <div class="shot"><span class="shot-ph">[App screenshots]</span></div>
+        <p>[One sentence describing the feature concept.]</p>
+        <a class="btn-dark" href="#">Coming Soon</a>
       </div>
     </div>
   </div>
