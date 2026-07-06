@@ -76,6 +76,23 @@
   /* About */
   .about p { margin-bottom: 18px; max-width: 700px; }
 
+  /* Work section — dark gray band */
+  #work { background: #797880; border-top: none; padding: 72px 0 80px; }
+  #work .section-title { color: #f4f3ef; font-size: 44px; margin-bottom: 56px; }
+  .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 36px; }
+  .work-item h3 { color: #f4f3ef; font-size: 22px; margin-bottom: 20px; font-weight: 500; }
+  .work-item .logo-tile {
+    background: #fff; border-radius: 10px; height: 170px;
+    display: flex; align-items: center; justify-content: center; padding: 24px; margin-bottom: 20px;
+  }
+  .work-item .logo-tile img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .work-item p { color: #e3e2dd; font-size: 15px; line-height: 1.6; margin-bottom: 22px; }
+  .work-item .btn-outline {
+    display: inline-block; padding: 11px 28px; border: 1px solid #cfd8d4; border-radius: 4px;
+    color: #eef2f0; font-size: 15px; letter-spacing: .03em; transition: background .2s, color .2s;
+  }
+  .work-item .btn-outline:hover { background: #f4f3ef; color: #3a3a40; border-color: #f4f3ef; }
+
   /* Cards */
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
   .card { border: 1px solid var(--line); border-radius: 12px; background: #fff; overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, box-shadow .15s; }
@@ -147,30 +164,30 @@
 <section id="work">
   <div class="wrap">
     <h2 class="section-title">My Work</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="thumb">🏢</div>
-        <div class="body">
-          <h3>Company A</h3>
-          <p>One–two sentences: your role, the user problem, and a concrete result (metric if possible).</p>
-          <a class="cta" href="#">View Projects →</a>
-        </div>
+    <div class="work-grid">
+      <div class="work-item">
+        <h3>Levedge</h3>
+        <div class="logo-tile"><img src="assets/levedge.png" alt="Levedge logo"></div>
+        <p>Currently the Founder of Levedge. [One–two sentences: what Levedge does and for whom.]</p>
+        <a class="btn-outline" href="#">View Projects</a>
       </div>
-      <div class="card">
-        <div class="thumb">🏢</div>
-        <div class="body">
-          <h3>Company B</h3>
-          <p>One–two sentences: your role, the user problem, and a concrete result.</p>
-          <a class="cta" href="#">View Projects →</a>
-        </div>
+      <div class="work-item">
+        <h3>Pendulum</h3>
+        <div class="logo-tile"><img src="assets/pendulum.png" alt="Pendulum logo"></div>
+        <p>Co-Founder at Pendulum. [One–two sentences: what Pendulum does and what you built.]</p>
+        <a class="btn-outline" href="#">View Projects</a>
       </div>
-      <div class="card">
-        <div class="thumb">🏢</div>
-        <div class="body">
-          <h3>Company C</h3>
-          <p>One–two sentences: your role, the user problem, and a concrete result.</p>
-          <a class="cta" href="#">View Projects →</a>
-        </div>
+      <div class="work-item">
+        <h3>EY–IBM Alliance</h3>
+        <div class="logo-tile"><img src="assets/ey-ibm.jpg" alt="EY-IBM Alliance logo"></div>
+        <p>[One–two sentences: your role in the alliance and a concrete outcome.]</p>
+        <a class="btn-outline" href="#">View Projects</a>
+      </div>
+      <div class="work-item">
+        <h3>EY</h3>
+        <div class="logo-tile"><img src="assets/ey.png" alt="EY logo"></div>
+        <p>Associate to Senior Product Manager at EY. [One–two sentences: the products you led and impact.]</p>
+        <a class="btn-outline" href="#">View Projects</a>
       </div>
     </div>
   </div>
