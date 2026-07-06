@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practicely — Sheryl Liu</title>
+<meta name="description" content="Practicely — projects by Sheryl Liu">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  :root {
+    --ink: #1a1a1a; --muted: #666; --line: #e8e8e4; --bg: #fdfdfb; --accent: #2d5be3; --max: 1180px;
+    --font-display: "Space Grotesk", -apple-system, sans-serif;
+    --font-body: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-body); color: var(--ink); background: var(--bg); line-height: 1.65; font-size: 16px; }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+  a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color .2s, color .2s; }
+  a:hover { color: var(--accent); border-color: var(--accent); }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  nav { position: sticky; top: 0; background: rgba(253,253,251,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  nav .logo { font-weight: 700; border: none; font-size: 21px; font-family: var(--font-display); }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul a { border: none; font-size: 15px; color: var(--muted); }
+  nav ul a:hover { color: var(--accent); }
+  @media (max-width: 640px) { nav ul { gap: 16px; } nav ul li:nth-child(n+4) { display: none; } }
+
+  header.page-hero { background: #f4f3ef; padding: 88px 0 64px; }
+  .page-hero .logo-mark { height: 64px; margin-bottom: 28px; display: flex; align-items: center; }
+  .page-hero .logo-mark img { max-height: 64px; max-width: 260px; object-fit: contain; }
+  .page-hero .dates { font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .page-hero h1 { font-size: clamp(36px, 5vw, 54px); color: var(--ink); margin-bottom: 20px; }
+  .page-hero .lede { font-size: 19px; color: var(--muted); max-width: 720px; }
+
+  main { padding: 72px 0 40px; }
+  .feature { margin-bottom: 88px; }
+  .feature .shot {
+    background: linear-gradient(135deg, #eef0f4, #e4e2dc); border-radius: 12px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center; min-height: 320px; margin-bottom: 36px;
+  }
+  .feature .shot img { width: 100%; display: block; }
+  .feature .shot .ph { color: var(--muted); font-size: 14px; padding: 40px; text-align: center; }
+  .feature h2 { font-size: 30px; margin-bottom: 14px; }
+  .feature p { color: var(--muted); font-size: 17px; max-width: 760px; }
+
+  .backlink { display: inline-block; margin: 0 0 56px; font-size: 15px; color: var(--muted); border: none; }
+  .backlink:hover { color: var(--accent); }
+
+  footer { background: #101012; padding: 64px 0 72px; font-size: 15px; margin-top: 48px; }
+  .foot-grid { display: flex; flex-wrap: wrap; gap: 48px; }
+  .foot-id { flex: 1 1 260px; }
+  .foot-id .name { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: #fff; margin-bottom: 18px; }
+  .foot-id .copyright { color: rgba(255,255,255,.45); font-size: 13px; margin-top: 14px; }
+  .foot-col { flex: 1 1 150px; }
+  .foot-col h4 { color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 18px; }
+  .foot-col a { display: block; color: rgba(255,255,255,.6); border: none; padding: 5px 0; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255,255,255,.25); }
+  .foot-col a:hover { color: #fff; }
+  footer .li-icon { display: inline-flex; color: rgba(255,255,255,.7); border: none; }
+  footer .li-icon:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html">Sheryl Liu</a>
+    <ul>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#projects">Side Projects</a></li>
+      <li><a href="index.html#cases">Case Studies</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="narrow">
+    
+    <div class="dates">2026</div>
+    <h1>Practicely</h1>
+    <p class="lede">Practicely is an agentic AI resume &amp; interview coach built exclusively for product managers. This product attracted 200+ users to join only a few weeks after launch.</p>
+  </div>
+</header>
+
+<main>
+  <div class="narrow">
+    <a class="backlink" href="index.html#projects">&larr; Back to all side projects</a>
+    <div class="feature">
+      <div class="shot"><img src="assets/practicely.jpg" alt="Practicely screenshot"></div>
+      <h2>[Feature 1]</h2>
+      <p>[2–4 sentences about this part of the product.]</p>
+    </div>
+    <div class="feature">
+      <div class="shot"><span class="ph">[Screenshot or mockup]</span></div>
+      <h2>[Feature 2]</h2>
+      <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
+    </div>
+    <div class="feature">
+      <div class="shot"><span class="ph">[Screenshot or mockup]</span></div>
+      <h2>[Feature 3]</h2>
+      <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-id">
+        <div class="name">Sheryl Liu</div>
+        <a class="li-icon" href="https://www.linkedin.com/" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <div class="copyright">&copy; Sheryl Liu 2026</div>
+      </div>
+      <div class="foot-col">
+        <h4>Work With Me</h4>
+        <a href="index.html#contact">Contact Me</a>
+      </div>
+      <div class="foot-col">
+        <h4>My Work</h4>
+        <a href="levedge.html">Levedge</a>
+        <a href="pendulum.html">Pendulum</a>
+        <a href="ey-ibm.html">EY&ndash;IBM Alliance</a>
+        <a href="ey.html">EY</a>
+      </div>
+      <div class="foot-col">
+        <h4>Side Projects</h4>
+        <a href="practicely.html">Practicely</a>
+      </div>
+      <div class="foot-col">
+        <h4>Case Studies</h4>
+        <a href="case-study.html">[Case Study]</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
