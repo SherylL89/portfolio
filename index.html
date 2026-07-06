@@ -117,13 +117,16 @@
   .shot-ph { color: var(--muted); font-size: 14px; }
   @media (max-width: 700px) { .sp-featured { flex-direction: column; } .sp-featured .info { flex: none; } }
 
-  /* Case studies — patterned band */
-  #cases {
-    border-top: none; padding: 72px 0 80px;
-    background-color: #fdfdfb;
+  /* Case studies — patterned band with soft dot overflow */
+  #cases { border-top: none; padding: 72px 0 80px; position: relative; }
+  #cases::before {
+    content: ""; position: absolute; left: 0; right: 0; top: -110px; bottom: -110px;
     background-image: radial-gradient(circle, #c9c7be 1.2px, transparent 1.2px);
-    background-size: 22px 22px;
+    background-size: 22px 22px; pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 180px, #000 calc(100% - 180px), transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 180px, #000 calc(100% - 180px), transparent);
   }
+  #cases .wrap { position: relative; }
   #cases .section-title { font-size: 44px; margin-bottom: 56px; }
   .cs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 48px; }
   .cs-item h3 { font-size: 24px; font-weight: 500; margin-bottom: 20px; }
