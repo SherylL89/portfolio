@@ -49,7 +49,8 @@
     width: 38%; max-width: 420px; aspect-ratio: 1; border-radius: 20px; flex-shrink: 0;
     object-fit: cover; box-shadow: 0 12px 32px rgba(0,0,0,.10);
   }
-  .hero .intro { flex: 1; }
+  .hero .intro { flex: 1; padding-left: 40px; }
+  @media (max-width: 700px) { .hero .intro { padding-left: 0; } }
   .hero h1 { font-size: clamp(22px, 3vw, 30px); font-weight: 400; line-height: 1.4; }
   .hero h1 em { font-style: italic; }
   .hero .kicker { font-size: 14px; }
@@ -213,8 +214,7 @@
     <img class="photo" src="headshot.jpg" alt="Sheryl Liu">
     <div class="intro">
       <h1>I'm Sheryl, a <em>product manager</em> and a <em>builder</em>, obsessed with user experience, AI and growth.</h1>
-      <hr class="rule">
-      <div class="kicker">My Experience</div>
+      <div class="kicker" style="margin-top:48px">My Experience</div>
       <ul class="xp">
         <li><span class="co"><a href="#work">Levedge</a></span> <span class="role">→ Founder (2025 — Present)</span></li>
         <li><span class="co"><a href="#work">Pendulum</a></span> <span class="role">→ Co-Founder (2024 — 2025)</span></li>
