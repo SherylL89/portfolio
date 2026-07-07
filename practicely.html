@@ -41,7 +41,22 @@
     position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(10,10,12,.72) 0%, rgba(10,10,12,.25) 55%, rgba(10,10,12,.15) 100%);
   }
-  .page-hero .wrap { position: relative; width: 100%; padding-top: 120px; padding-bottom: 64px; }
+  .page-hero .wrap {
+    position: relative; width: 100%; padding-top: 110px; padding-bottom: 64px;
+    display: flex; align-items: flex-end; gap: 56px;
+  }
+  .page-hero .hero-txt { flex: 1; }
+  .page-hero .hero-laptop { flex: 0 0 44%; max-width: 560px; }
+  .hero-laptop .screen { background: #1c1c1e; border-radius: 12px 12px 0 0; padding: 12px 12px 14px; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+  .hero-laptop .screen img { display: block; width: 100%; border-radius: 5px; }
+  .hero-laptop .base { height: 14px; background: linear-gradient(#d8d6d0, #a9a7a1); border-radius: 0 0 10px 10px; position: relative; box-shadow: 0 14px 34px rgba(0,0,0,.5); }
+  .hero-laptop .base::before { content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 96px; height: 5px; background: #97958f; border-radius: 0 0 7px 7px; }
+  @media (max-width: 900px) { .page-hero .wrap { flex-direction: column; align-items: flex-start; } .page-hero .hero-laptop { flex: none; width: 100%; } }
+
+  /* Demo video */
+  .demo { padding: 88px 0 0; }
+  .demo .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; font-weight: 500; }
+  .demo video { width: 100%; display: block; border-radius: 14px; box-shadow: 0 16px 48px rgba(0,0,0,.14); background: #000; }
   .page-hero .dates { font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.75); margin-bottom: 12px; }
   .page-hero h1 { font-size: clamp(40px, 6vw, 64px); color: #fff; margin-bottom: 18px; }
   .page-hero .lede { font-size: 19px; color: rgba(255,255,255,.85); max-width: 640px; }
@@ -106,15 +121,29 @@
 </nav>
 
 <header class="page-hero">
-  <!-- Optional: <img class="hero-img" src="assets/YOUR-HERO-PHOTO.jpg" alt=""> -->
+  <img class="hero-img" src="assets/wood.jpg" alt="" style="opacity:.85">
   <div class="scrim"></div>
   <div class="wrap">
-    <div class="dates">2026</div>
-    <h1>Practicely</h1>
-    <p class="lede">Practicely is an agentic AI resume &amp; interview coach built exclusively for product managers. This product attracted 200+ users to join only a few weeks after launch.</p>
-    
+    <div class="hero-txt">
+      <div class="dates">2025 — 2026</div>
+      <h1>Practicely</h1>
+      <p class="lede">Led a team of 5 PMs, 10 engineers and 2 designers to develop an agentic AI resume &amp; interview coach from 0 → 1.</p>
+    </div>
+    <div class="hero-laptop">
+      <div class="screen"><img src="assets/practicely.jpg" alt="Practicely — AI resume and interview coach for product managers"></div>
+      <div class="base"></div>
+    </div>
   </div>
 </header>
+
+<section class="demo">
+  <div class="wrap">
+    <div class="kicker">Product Demo</div>
+    <video controls preload="metadata" poster="assets/practicely-demo-poster.jpg">
+      <source src="assets/practicely-demo.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
 
 <main>
   <div class="wrap">
