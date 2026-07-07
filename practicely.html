@@ -95,6 +95,8 @@
     min-height: 340px; display: flex; align-items: center; justify-content: center; overflow: hidden;
   }
   .feature .shot img { width: 100%; display: block; }
+  .feature .shot.stacked { flex-direction: column; gap: 14px; padding: 18px; background: linear-gradient(135deg, #eef0f4, #e4e2dc); }
+  .feature .shot.stacked img { border-radius: 8px; }
   .feature .shot .ph { color: var(--muted); font-size: 14px; padding: 40px; text-align: center; }
   @media (max-width: 800px) {
     .feature, .feature:nth-child(even) { flex-direction: column; gap: 28px; }
@@ -197,24 +199,41 @@
     <a class="backlink" href="index.html#projects">&larr; Back to all side projects</a>
     <div class="feature">
       <div class="txt">
-        <h2>[Feature 1]</h2>
-        <p>[2–4 sentences about this part of the product.]</p>
+        <h2>AI Resume Coach</h2>
+        <p>Allow users to provide their resume and target job description for detailed analysis.</p>
       </div>
-      <div class="shot"><img src="assets/practicely.jpg" alt="Practicely screenshot"></div>
+      <div class="shot"><img src="assets/resume-coach-1.jpg" alt="Practicely resume coach — upload resume and target job description"></div>
     </div>
     <div class="feature">
       <div class="txt">
-        <h2>[Feature 2]</h2>
-        <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
+        <h2>Resume Fit Score</h2>
+        <p>Score the candidate's resume fit to their target JD, provide tailored feedback on how to improve.</p>
       </div>
-      <div class="shot"><span class="ph">[Screenshot or mockup]</span></div>
+      <div class="shot stacked">
+        <img src="assets/resume-coach-2.jpg" alt="Practicely resume fit score">
+        <img src="assets/resume-coach-3.jpg" alt="Practicely tailored resume feedback">
+      </div>
     </div>
     <div class="feature">
       <div class="txt">
-        <h2>[Feature 3]</h2>
-        <p>[2–4 sentences: the user problem, what you shipped, and the outcome. Lead with the problem, end with a metric if you have one.]</p>
+        <h2>7+ Interview Types</h2>
+        <p>Users could choose from 7+ interview types to practice.</p>
       </div>
-      <div class="shot"><span class="ph">[Screenshot or mockup]</span></div>
+      <div class="shot"><img src="assets/interview-coach-3.jpg" alt="Practicely interview type selection"></div>
+    </div>
+    <div class="feature">
+      <div class="txt">
+        <h2>AI Interview Coach</h2>
+        <p>Users could practice interviews with their dedicated AI coach who asks targeted questions.</p>
+      </div>
+      <div class="shot"><img src="assets/interview-coach-1.jpg" alt="Practicely AI interview practice session"></div>
+    </div>
+    <div class="feature">
+      <div class="txt">
+        <h2>Personalized Feedback</h2>
+        <p>Users could get personalized feedback after each session.</p>
+      </div>
+      <div class="shot"><img src="assets/interview-coach-2.jpg" alt="Practicely post-session personalized feedback"></div>
     </div>
 
   </div>
