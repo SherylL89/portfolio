@@ -57,6 +57,19 @@
   .demo { padding: 88px 0 0; }
   .demo .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; font-weight: 500; }
   .demo video { width: 100%; display: block; border-radius: 14px; box-shadow: 0 16px 48px rgba(0,0,0,.14); background: #000; }
+
+  /* Stats row */
+  .stats { padding: 72px 0 8px; }
+  .stats .row { display: flex; flex-wrap: wrap; gap: 24px 48px; justify-content: space-between; }
+  .stat .num {
+    font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+  }
+  .stat .num .acc { color: var(--accent); }
+  .stat .lbl {
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--muted); margin-top: 4px; font-weight: 500;
+  }
   .page-hero .dates { font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.75); margin-bottom: 12px; }
   .page-hero h1 { font-size: clamp(40px, 6vw, 64px); color: #fff; margin-bottom: 18px; }
   .page-hero .lede { font-size: 19px; color: rgba(255,255,255,.85); max-width: 640px; }
@@ -144,6 +157,40 @@
     </video>
   </div>
 </section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="row">
+      <div class="stat"><div class="num"><span class="count" data-target="200">0</span><span class="acc">+</span></div><div class="lbl">Users at launch</div></div>
+      <div class="stat"><div class="num"><span class="count" data-target="17">0</span></div><div class="lbl">Team members led</div></div>
+      <div class="stat"><div class="num"><span class="count" data-target="5">0</span></div><div class="lbl">Product managers</div></div>
+      <div class="stat"><div class="num">0<span class="acc">→</span>1</div><div class="lbl">Product build</div></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.count');
+  if (reduce) { els.forEach(function(e){ e.textContent = e.dataset.target; }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting || en.target.dataset.done) return;
+      en.target.dataset.done = 1;
+      var target = +en.target.dataset.target, t0 = null;
+      function step(t){
+        if (!t0) t0 = t;
+        var p = Math.min((t - t0) / 1200, 1);
+        en.target.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: .6 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
 
 <main>
   <div class="wrap">
